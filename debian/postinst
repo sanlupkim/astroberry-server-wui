@@ -5,9 +5,11 @@
 if [ "$1" = "configure" ] && [ ! -e /root/.vnc/config.d/vncserver-x11 ] && [ -z "$(grep '^Password=ce77cd632e94ca19845f7deae77a1828$' /root/.vnc/config.d/vncserver-x11)" ]; then
     echo "astroberry" | vncpasswd -service
     echo "Authentication=VncAuth" >> /root/.vnc/config.d/vncserver-x11
+    echo "Encryption=PreferOn" >> /root/.vnc/config.d/vncserver-x11
 fi
 if [ "$1" = "configure" ] && [ ! -e /root/.vnc/config.d/vncserver-x11 ] && [ -z "$(grep 'Authentication=VncAuth' /root/.vnc/config.d/vncserver-x11)" ]; then
     echo "Authentication=VncAuth" >> /root/.vnc/config.d/vncserver-x11
+    echo "Encryption=PreferOn" >> /root/.vnc/config.d/vncserver-x11
 fi
 
 # set log directory access rights
