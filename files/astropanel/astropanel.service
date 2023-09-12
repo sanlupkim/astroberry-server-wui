@@ -4,7 +4,7 @@ After=multi-user.target gpsd.socket
 
 [Service]
 Type=idle
-User=nobody
+DynamicUser=true
 ExecStart=/usr/bin/python3 /var/www/astropanel/astropanel.py
 Restart=always
 RestartSec=10
